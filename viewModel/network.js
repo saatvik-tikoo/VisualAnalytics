@@ -47,7 +47,7 @@ function on_click_algo(algo_name) {
             .data(root.descendants().slice(1))
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
-            .attr("pointer-events", d => !d.children ? "none" : null)
+            // .attr("pointer-events", d => !d.children ? "none" : null)
             .on("mouseover", function(d) {
                 console.log(d.data.name);
                 d3.select(this).attr("stroke", "#000");
@@ -89,7 +89,7 @@ function on_click_algo(algo_name) {
             .text(function(d) {
                 // console.log(d);
 
-                return d.data.uName;
+                // return d.data.uName;
             });
 
         zoomTo([root.x, root.y, root.r * 2]);
