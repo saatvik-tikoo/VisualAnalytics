@@ -57,7 +57,7 @@ function on_click_algo(algo_name) {
             .attr("fill", d => d.children ? color(d.depth) : "white")
             .attr("pointer-events", d => !d.children ? "none" : null)
             .on("mouseover", function(d) {
-                d3.select(this).duration(50).attr("stroke", "#000");
+                d3.select(this).attr("stroke", "#000");
                 tooltip_div.transition()
                     .duration(50)
                     .style("opacity", 1);
@@ -73,7 +73,7 @@ function on_click_algo(algo_name) {
                     .style("top", (d3.event.pageY - 15) + "px");
             })
             .on("mouseout", function() {
-                d3.select(this).duration(50).attr("stroke", null);
+                d3.select(this).attr("stroke", null);
             })
             .on("click", d => focus !== d && (zoom(d), d3.event.stopPropagation()));
 
@@ -89,7 +89,15 @@ function on_click_algo(algo_name) {
             .style("fill-opacity", d => d.parent === root ? 1 : 0)
             .style("display", d => d.parent === root ? "inline" : "none")
             .text(function(d) {
-                return d.uName;
+                // console.log(d);
+                var disp_data = {
+                    "Name": d.data.uName,
+                    "Followers": d.data.followers,
+                    "Total Times Retweeted": d.data.totalTimesRetweeted,
+                    "Total Tweets": d.data.totalTweets
+
+                }
+                return JSON.stringify(disp_data);
             });
 
         zoomTo([root.x, root.y, root.r * 2]);
