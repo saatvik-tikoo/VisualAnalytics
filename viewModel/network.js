@@ -40,6 +40,8 @@ function on_click_algo(algo_name) {
 
 
                 const root = pack(data);
+                console.log(root);
+
                 let focus = root;
                 let view;
 
