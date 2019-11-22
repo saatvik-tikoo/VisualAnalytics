@@ -48,19 +48,6 @@ function on_click_algo(algo_name) {
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
             .attr("pointer-events", d => !d.children ? "none" : null)
-            // .on("mouseover", function(d) {
-            //     tooltip_div.transition()
-            //         .duration(200)
-            //         .style("opacity", .9);
-            //     tooltip_div.html(d.uName + "<br/>" + d.followers)
-            //         .style("left", (d3.event.pageX) + "px")
-            //         .style("top", (d3.event.pageY - 28) + "px");
-            // })
-            // .on("mouseout", function(d) {
-            //     tooltip_div.transition()
-            //         .duration(500)
-            //         .style("opacity", 0);
-            // })
             .on("mouseover", function(d) {
                 console.log(d);
                 d3.select(this).attr("stroke", "#000");
@@ -78,13 +65,11 @@ function on_click_algo(algo_name) {
                         "Followers": d.data.followers,
                         "Total Times Retweeted": d.data.totalTimesRetweeted,
                         "Total Tweets": d.data.totalTweets
-
                     }
-
                 }
                 tooltip_div.html(JSON.stringify(disp_data))
-                    .style("left", (d3.event.pageX + 10) + "px")
-                    .style("top", (d3.event.pageY - 15) + "px");
+                    .style("left", (d3.event.pageX + -28) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
                 console.log(tooltip_div);
             })
             .on("mouseout", function() {
