@@ -26,17 +26,18 @@
         .bg-dark {
             background-color: #222222;
         }
+        
         div.tooltip-tweet {
-          position: absolute;           
-          text-align: center;           
-          width: auto;                  
-          height: auto;                 
-          padding: 2px;             
-          font: 12px sans-serif;
-          background: rgb(255, 255, 255);   
-          border: 0px;      
-          border-radius: 8px;           
-          pointer-events: none; 
+            position: absolute;
+            text-align: center;
+            width: auto;
+            height: auto;
+            padding: 2px;
+            font: 12px sans-serif;
+            background: rgb(255, 255, 255);
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -69,11 +70,14 @@
             </div>
             <div class="col-sm-8" style="margin-top: 30px; float:right">
                 <h2>Network Graph</h2>
-                <button id="stanford" onclick="on_click_algo('stanford')">Generate
+                <button id="stanford" onclick="on_click_algo('stanford')">Generate Network
+                </button>
+                <button id="stanford" onclick="on_click_bar('stanford')">Generate Bars
                 </button>
                 <h5>Total Time taken to generate this</h5>
                 <div id="graph">
                     <svg id="svg_graph"></svg>
+                    <svg id="svg_bar"></svg>
                 </div>
                 <p>Description..</p>
                 <p>Description of the visualization.</p>
