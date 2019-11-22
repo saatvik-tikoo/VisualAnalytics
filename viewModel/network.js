@@ -79,11 +79,7 @@ function on_click_algo(algo_name) {
                     .style("fill-opacity", d => d.parent === root ? 1 : 0)
                     .style("display", d => d.parent === root ? "inline" : "none")
                     .text(function(d) {
-                        if (d.data.value != undefined) {
-                            return d.data.name + " : " + String(d.data.value)
-                        } else {
-                            return d.data.name;
-                        }
+                        return d.uName;
                     });
 
                 zoomTo([root.x, root.y, root.r * 2]);
