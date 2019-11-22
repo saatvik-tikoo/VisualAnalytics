@@ -18,7 +18,7 @@
         }
         
         .footer {
-            height: 30px;
+            height: 60px;
             background-color: rgb(185, 183, 183);
             margin: 0px;
         }
@@ -39,55 +39,110 @@
             border-radius: 8px;
             pointer-events: none;
         }
+        
+        .navbar * {
+            color: #ffffff !important;
+        }
+        
+        .navbar {
+            margin-bottom: 0 !important;
+            background-color: #16A3F3;
+            border: 0;
+        }
+        
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #ffffff !important;
+        }
+        
+        .navbar-nav li a:hover {
+            color: #000000 !important;
+            background-color: #eceaea !important;
+        }
+        
+        .navbar-nav li.active a {
+            color: #000000 !important;
+            background-color: #ffffff !important;
+        }
+        
+        .navbar-nav li.active a {
+            text-decoration: none !important;
+        }
+        
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+        
+        .navbar-header {
+            font-size: 11px !important;
+            letter-spacing: 4px;
+        }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="#">Visual Analytics ToolKit</a>
-    </nav>
-
-    <div class="container" style="margin-top:70px">
-        <div class="row" style="padding-bottom: 10px; position: fixed;">
-            <form action="index.js" method="post" enctype="multipart/form-data">
-                <input type="file" name="dataFile" id="myFile" style="padding: 10px;">
-            </form>
-        </div>
-        <div class="row">
-            <div class="col-sm-4" style="position: fixed; margin-top: 100px; float: left">
-                <h3>Analysers</h3>
-                <p>Select one of the following.</p>
-                <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#" style="padding: 0px 10px 0px 10px;">Network Graph</a>
-                    </li>
-                    <br>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" style="padding: 0px 10px 0px 10px;">Bar Graph</a>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="#">Visual Analytics ToolKit</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Network Graph</a></li>
+                    <li><a href="#">Bar Graph</a></li>
+                    <li>
+                        <form class="navbar-form" action="index.js" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" name="dataFile" id="myFile" style="padding: 10px;">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Upload</button>
+                        </form>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-8" style="margin-top: 30px; float:right">
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:70px">
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 30px;">
                 <h2>Network Graph</h2>
-                <button id="stanford" onclick="on_click_algo('stanford')">Generate Network
-                </button>
-                <button id="stanford" onclick="on_click_bar('stanford')">Generate Bars
-                </button>
-                <h5>Total Time taken to generate this</h5>
+                <button id="stanford" class="btn btn-danger" onclick="on_click_algo('stanford')">Generate
+        </button>
+                <h5 id="displayTime"></h5>
                 <div id="graph">
                     <svg id="svg_graph"></svg>
-                    <svg id="svg_bar"></svg>
                 </div>
-                <p>Description..</p>
-                <p>Description of the visualization.</p>
-                <br>
+                <div id="desc" style="visibility: hidden; padding-top: 10px;">
+                    <h4 style="font-weight: bold;">What is This!!!</h4>
+                    <p>The outermost circles represent 3 groups.</p>
+                    <p style="padding-left:5px">1. Nodes that are similar to the Truth Value</p>
+                    <p style="padding-left:5px">2. Nodes that are not similar to the Truth Value but have been labelled</p>
+                    <p style="padding-left:5px">3. Nodes that are not similar to the Truth Value and have not been labelled</p>
+                    <br>
+                    <p>Each of these Circles is further divided into 5 parts based on count of followers as follows:</p>
+                    <p style="padding-left:5px">1. Less than 100 followers</p>
+                    <p style="padding-left:5px">2. Followers between 100 and 500</p>
+                    <p style="padding-left:5px">3. Followers between 500 and 1000</p>
+                    <p style="padding-left:5px">4. Followers between 1000 and 10000</p>
+                    <p style="padding-left:5px">5. Followers greater than 10000</p>
+                    <br>
+                    <p>Then again, each of these groups is sub divided into highly connected and lowly connected nodes based on the property that a highly connected node is the one where each node has got retweets greater than 5% of their total followers.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer text-center bg-dark" style="margin-bottom:0; bottom:0px; position: fixed; width: 100%">
         <p style="color: white; font-size: 12px; margin: 0px; padding: 5px">&#169;COPYRIGHT @CKIDS2019</p>
+        <p style="color: white; font-size: 12px; margin: 0px; padding: 5px">Designed and Developed by Mansi Ganatra and Saatvik Tikoo</p>
     </div>
 
 </body>

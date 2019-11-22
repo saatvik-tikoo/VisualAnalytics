@@ -1,4 +1,5 @@
 function on_click_algo(algo_name) {
+    var startTime = new Date().getTime();
     d3.json("../mainData.json").then(function(response) {
 
         var data = response[0];
@@ -43,6 +44,7 @@ function on_click_algo(algo_name) {
             .style("opacity", 0);
 
         const node = svg.append("g")
+            .attr("class", "circles_g")
             .selectAll("circle")
             .data(root.descendants().slice(1))
             .join("circle")
