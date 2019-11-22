@@ -143,10 +143,11 @@ function on_click_bar(algo_name) {
 
         var bar_data = []
 
-        var algo_details = {}
+
 
         data.forEach(d => {
 
+            var algo_details = {}
             algo_details.name = d.name;
 
             // console.log("d:" + d);
@@ -286,9 +287,9 @@ function on_click_bar(algo_name) {
             .enter()
             .append('rect')
             .attr('class', 'bar svgbar2')
-            .attr('x', (d) => svg_bar_x_scale_1('Different values without NA'))
-            .attr('y', (d) => svg_bar_y_scale(d['Different values without NA']))
-            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without NA']))
+            .attr('x', (d) => svg_bar_x_scale_1('Different values without any NA'))
+            .attr('y', (d) => svg_bar_y_scale(d['Different values without any NA']))
+            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without any NA']))
             .attr('width', svg_bar_x_scale_1.bandwidth());
 
         svg_bars.selectAll(".bar.svgbar3")
@@ -319,9 +320,9 @@ function on_click_bar(algo_name) {
             .data(bar_data => [bar_data])
             .enter()
             .append('text')
-            .attr('x', (d) => svg_bar_x_scale_1('Different values without NA') + svg_bar_x_scale_1.bandwidth() / 4)
-            .attr('y', (d) => svg_bar_y_scale(d['Different values without NA']))
-            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without NA']))
+            .attr('x', (d) => svg_bar_x_scale_1('Different values without any NA') + svg_bar_x_scale_1.bandwidth() / 4)
+            .attr('y', (d) => svg_bar_y_scale(d['Different values without any NA']))
+            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without any NA']))
             .attr('width', svg_bar_x_scale_1.bandwidth())
             .attr('class', 'bartext2')
             .text(function(d) {
