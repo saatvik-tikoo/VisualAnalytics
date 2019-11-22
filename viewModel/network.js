@@ -1,4 +1,5 @@
 function on_click_algo(algo_name) {
+    var startTime = new Date().getTime();
     d3.json("../mainData.json").then(function(response) {
 
         var data = response[0];
@@ -43,6 +44,7 @@ function on_click_algo(algo_name) {
             .style("opacity", 0);
 
         const node = svg.append("g")
+            .attr("class", "circles_g")
             .selectAll("circle")
             .data(root.descendants().slice(1))
             .join("circle")
@@ -130,5 +132,16 @@ function on_click_algo(algo_name) {
                 });
         }
     });
+    var elementExists = document.getElementsByClassName("circles_g");
+    var myInterval = setInterval(myTimer, 500);
 
+    function myTimer() {
+        if (elementExists){
+            var endTime = new Date().getTime();
+            document.getElementById('displayTime').innerHTML = 'Total Time to generate: ' + (endTime - startTime) / 1000  + ' seconds'
+            clearInterval(myInterval);
+            document.getElementById('desc').style.visibility = 'visible';
+            
+        }
+    }
 }
