@@ -1,5 +1,7 @@
 function on_click_algo(algo_name) {
-    d3.json("../dummy.json").then(function(data) {
+    d3.json("../mainData.json").then(function(response) {
+
+        var data = response[0];
 
         console.log(data);
 
@@ -36,7 +38,7 @@ function on_click_algo(algo_name) {
             .style("color", "white")
             .on("click", () => zoom(root));
 
-        var tooltip_div = d3.select("body").append("div")
+        var tooltip_div = d3.select("#graph").append("div")
             .attr("class", "tooltip-tweet")
             .style("opacity", 0);
 
@@ -46,24 +48,48 @@ function on_click_algo(algo_name) {
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
             .attr("pointer-events", d => !d.children ? "none" : null)
+            // .on("mouseover", function(d) {
+            //     tooltip_div.transition()
+            //         .duration(200)
+            //         .style("opacity", .9);
+            //     tooltip_div.html(d.uName + "<br/>" + d.followers)
+            //         .style("left", (d3.event.pageX) + "px")
+            //         .style("top", (d3.event.pageY - 28) + "px");
+            // })
+            // .on("mouseout", function(d) {
+            //     tooltip_div.transition()
+            //         .duration(500)
+            //         .style("opacity", 0);
+            // })
             .on("mouseover", function(d) {
-                d3.select(this).duration(50).attr("stroke", "#000");
+                console.log(d);
+                d3.select(this).attr("stroke", "#000");
                 tooltip_div.transition()
                     .duration(50)
-                    .style("opacity", 1);
-                var disp_data = {
-                    "Name": d.uName,
-                    "Followers": d.followers,
-                    "Total Times Retweeted": d.totalTimesRetweeted,
-                    "Total Tweets": d.totalTweets
+                    .style("opacity", 0.9);
+                if (d.data.children != undefined) {
+                    var disp_data = {
+                        "Name": d.data.name
+                    }
+
+                } else {
+                    var disp_data = {
+                        "Name": d.data.uName,
+                        "Followers": d.data.followers,
+                        "Total Times Retweeted": d.data.totalTimesRetweeted,
+                        "Total Tweets": d.data.totalTweets
+
+                    }
 
                 }
-                tooltip_div.html(disp_data)
+                tooltip_div.html(JSON.stringify(disp_data))
                     .style("left", (d3.event.pageX + 10) + "px")
                     .style("top", (d3.event.pageY - 15) + "px");
+                console.log(tooltip_div);
             })
             .on("mouseout", function() {
-                d3.select(this).duration(50).attr("stroke", null);
+                d3.select(this).attr("stroke", null);
+                return tooltip_div.style("visibility", "hidden");
             })
             .on("click", d => focus !== d && (zoom(d), d3.event.stopPropagation()));
 
@@ -79,7 +105,9 @@ function on_click_algo(algo_name) {
             .style("fill-opacity", d => d.parent === root ? 1 : 0)
             .style("display", d => d.parent === root ? "inline" : "none")
             .text(function(d) {
-                return d.uName;
+                // console.log(d);
+
+                return d.data.uName;
             });
 
         zoomTo([root.x, root.y, root.r * 2]);
