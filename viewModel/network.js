@@ -34,17 +34,34 @@ function on_click_algo(algo_name) {
             .style("color", "white")
             .on("click", () => zoom(root));
 
+        var tooltip_div = d3.select("body").append("div")
+            .attr("class", "tooltip-tweet")
+            .style("opacity", 0);
+
         const node = svg.append("g")
             .selectAll("circle")
             .data(root.descendants().slice(1))
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
             .attr("pointer-events", d => !d.children ? "none" : null)
-            .on("mouseover", function () {
-                d3.select(this).attr("stroke", "#000");
+            .on("mouseover", function (d) {
+                d3.select(this).duration(50).attr("stroke", "#000");
+                tooltip_div.transition()
+                    .duration(50)
+                    .style("opacity", 1);
+                var disp_data = {
+                    "Name": d.uName,
+                    "Followers": d.followers,
+                    "Total Times Retweeted": d.totalTimesRetweeted,
+                    "Total Tweets": d.totalTweets
+
+                }
+                tooltip_div.html(disp_data)
+                    .style("left", (d3.event.pageX + 10) + "px")
+                    .style("top", (d3.event.pageY - 15) + "px");
             })
             .on("mouseout", function () {
-                d3.select(this).attr("stroke", null);
+                d3.select(this).duration(50).attr("stroke", null);
             })
             .on("click", d => focus !== d && (zoom(d), d3.event.stopPropagation()));
 
@@ -60,11 +77,7 @@ function on_click_algo(algo_name) {
             .style("fill-opacity", d => d.parent === root ? 1 : 0)
             .style("display", d => d.parent === root ? "inline" : "none")
             .text(function (d) {
-                if (d.data.value != undefined) {
-                    return d.data.name + " : " + String(d.data.value)
-                } else {
-                    return d.data.name;
-                }
+                return d.uName;
             });
 
         zoomTo([root.x, root.y, root.r * 2]);
@@ -105,4 +118,43 @@ function on_click_algo(algo_name) {
                 });
         }
     });
+
+    zoomTo([root.x, root.y, root.r * 2]);
+
+    function zoomTo(v) {
+        const k = width / v[2];
+
+        view = v;
+
+        label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+        node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+        node.attr("r", d => d.r * k);
+    }
+
+    function zoom(d) {
+        const focus0 = focus;
+
+        focus = d;
+
+        const transition = svg.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", d => {
+                const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
+                return t => zoomTo(i(t));
+            });
+
+        label
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .transition(transition)
+            .style("fill-opacity", d => d.parent === focus ? 1 : 0)
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
 }
