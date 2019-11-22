@@ -7,7 +7,7 @@ function on_click_algo(algo_name) {
 
         var color = d3.scaleLinear()
             .domain([0, 5])
-            .range(["hsl(298, 62%, 24%)", "hsl(17, 100%, 74%)"])
+            .range(["#2969B0", "#54ACD2"])
             .interpolate(d3.interpolateHcl);
 
         format = d3.format(",d");
