@@ -18,7 +18,7 @@ function on_click_algo(algo_name) {
             console.log(response);
 
             // var res = response.data;
-            d3.json("dummy.json").then(function(data) {
+            d3.json("../dummy.json").then(function(data) {
 
                 console.log(data);
 
