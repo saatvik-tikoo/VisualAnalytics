@@ -34,8 +34,8 @@ function on_click_algo(algo_name) {
                     .size([width, height])
                     .padding(3)
                     (d3.hierarchy(data)
-                        .sum(d => d.value)
-                        .sort((a, b) => b.value - a.value))
+                        .sum(d => d.followers)
+                        .sort((a, b) => b.followers - a.followers))
 
 
 
