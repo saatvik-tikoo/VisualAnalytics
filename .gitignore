@@ -1,0 +1,4 @@
+node_modules/*
+Database/gamergate.json
+Database/mydb.sqlite3
+.idea
