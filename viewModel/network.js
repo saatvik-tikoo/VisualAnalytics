@@ -1,13 +1,3 @@
-$.ajax({
-    url: 'http://localhost:3000/gamergate/filterStanford',
-    async: true,
-    method: 'GET',
-    contentType: 'application/json',
-    success: function(response) {
-        console.log(response)
-    }
-});
-
 function on_click_algo(algo_name) {
     d3.json("../dummy.json").then(function(data) {
 
