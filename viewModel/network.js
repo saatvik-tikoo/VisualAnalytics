@@ -56,19 +56,15 @@ function on_click_algo(algo_name) {
                     .style("opacity", 0.9);
                 var disp_data;
                 if (d.data.children) {
-                    disp_data = {
-                        "Name": d.data.name
-                    }
+                    disp_data = "Name: " + d.data.name;
 
                 } else {
-                    disp_data = {
-                        "Name": d.data.uName,
-                        "Followers": d.data.followers,
-                        "Total Times Retweeted": d.data.totalTimesRetweeted,
-                        "Total Tweets": d.data.totalTweets
-                    }
+                    disp_data = "Name: " + d.data.uName + "<br/>" +
+                        "Followers: " + d.data.followers + "<br/>" +
+                        "Total Times Retweetedme: " + d.data.totalTimesRetweeted + "<br/>" +
+                        "Total Tweets: " + d.data.totalTweets + "<br/>"
                 }
-                tooltip_div .html(JSON.stringify(disp_data))
+                tooltip_div.html(JSON.stringify(disp_data))
                     .style("left", (d3.event.layerX + 10) + "px")
                     .style("top", (d3.event.layerY + 10) + "px");
                 console.log(tooltip_div);
