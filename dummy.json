@@ -1,0 +1,566 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_100"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_300"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_500"
+        }
+      ],
+      "name": "algo_turk_equal"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_100"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_300"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_500"
+        }
+      ],
+      "name": "algo_turk_not_equal"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_100"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_300"
+        },
+        {
+
+          "children": [
+            {
+              "followers": 582,
+              "id": 1,
+              "mTurk": "N/A",
+              "network": "Feminist",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "GrrlGotGame",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 17030,
+              "id": 2,
+              "mTurk": "Feminist",
+              "network": "Feminist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 67,
+              "totalTweets": 68,
+              "uName": "misterbrilliant",
+              "usc": "Feminist"
+            },
+            {
+              "followers": 886,
+              "id": 3,
+              "mTurk": "N/A",
+              "network": "Misogynist",
+              "stanford": "Feminist",
+              "totalTimesRetweeted": 258,
+              "totalTweets": 393,
+              "uName": "Exxthus",
+              "usc": "Misogynist"
+            },
+            {
+              "followers": 978,
+              "id": 4,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 0,
+              "totalTweets": 1,
+              "uName": "AlexTheGreek__",
+              "usc": "N/A"
+            },
+            {
+              "followers": -1,
+              "id": 5,
+              "mTurk": "N/A",
+              "network": "N/A",
+              "stanford": "N/A",
+              "totalTimesRetweeted": 1,
+              "totalTweets": 1,
+              "uName": "HowardPhilpott",
+              "usc": "N/A"
+            }
+          ],
+          "name": "followers_lt_500"
+        }
+      ],
+      "name": "algo_not_present"
+    }
+  ],
+  "name": "stanford"
+}
