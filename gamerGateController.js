@@ -24,10 +24,18 @@ module.exports = function(app, db, jsonParser, urlencodedParser, cors){
 		});
 	});
 
-	console.log("Registering get endpoint: /api/gamergate/filterStanford");
+	console.log("Registering get endpoint: /api/gamergate/stanford/{val}");
 	
-	app.get('/api/gamergate/filterStanford', cors(), (req, res) =>{
-		var sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE stanford";
+	app.get('/api/gamergate/stanford/:val', cors(), (req, res) =>{
+		var val = req.params.val;
+		var sql ='';
+		if(val == 'same'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE stanford";
+		} else if (val == 'na'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE stanford AND stanford LIKE 'N/A'";
+		} else if (val == 'diff'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE stanford AND stanford NOT LIKE 'N/A'";
+		}
 		db.get( sql, function(err, rows) {
 			if (err) {
 				res.status(400).json({"error":err.message});
@@ -40,10 +48,19 @@ module.exports = function(app, db, jsonParser, urlencodedParser, cors){
 		});
 	});
 
-	console.log("Registering get endpoint: /api/gamergate/filterUSC");
+	console.log("Registering get endpoint: /api/gamergate/usc/{val}");
 	
-	app.get('/api/gamergate/filterUSC', cors(), (req, res) =>{
-		var sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE usc";
+	app.get('/api/gamergate/usc/:val', cors(), (req, res) =>{
+		var val = req.params.val;
+		var sql = '';
+		if(val == 'same'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE usc";
+		} else if (val == 'na'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE usc AND usc LIKE 'N/A'";
+		} else if (val == 'diff'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE usc AND usc NOT LIKE 'N/A'";
+		}
+		
 		db.get( sql, function(err, rows) {
 			if (err) {
 				res.status(400).json({"error":err.message});
@@ -56,10 +73,19 @@ module.exports = function(app, db, jsonParser, urlencodedParser, cors){
 		});
 	});
 
-	console.log("Registering get endpoint: /api/gamergate/filterNetwork");
+	console.log("Registering get endpoint: /api/gamergate/network/{val}");
 	
-	app.get('/api/gamergate/filterNetwork', cors(), (req, res) =>{
-		var sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE network";
+	app.get('/api/gamergate/network/:val', cors(), (req, res) =>{
+		var val = req.params.val;
+		var sql = '';
+		if(val == 'same'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk LIKE network";
+		} else if (val == 'na'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE network AND network LIKE 'N/A'";
+		} else if (val == 'diff'){
+			sql = "SELECT COUNT(*) as Total FROM gamergate WHERE mTurk NOT LIKE network AND network NOT LIKE 'N/A'";
+		}
+		
 		db.get( sql, function(err, rows) {
 			if (err) {
 				res.status(400).json({"error":err.message});
