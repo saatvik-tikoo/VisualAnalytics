@@ -65,26 +65,26 @@ div.tooltip-tweet {
 }
 
 .svgbar1 {
-    fill: lightsalmon;
+    fill: #005000;
     stroke-width: 3;
-    stroke: salmon;
-    width: 25px;
+    stroke: black;
+    width: 30px;
 }
 
 .svgbar2 {
-    fill: pink;
+    fill: #000050;
     stroke-width: 3;
-    stroke: palevioletred;
-    width: 25px;
-    padding-left: 30px
+    stroke: black;
+    width: 30px;
+    padding-left: 10px
 }
 
 .svgbar3 {
-    fill: mediumorchid;
+    fill: #500000;
     stroke-width: 3;
-    stroke: orchid;
-    width: 25px;
-    padding-left: 30px
+    stroke: blac;
+    width: 30px;
+    padding-left: 10px
 }
 
 .axis {
@@ -99,6 +99,7 @@ div.tooltip-tweet {
     text-anchor: middle;
     text-align: center;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .axis path,
