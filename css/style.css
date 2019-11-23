@@ -80,9 +80,9 @@ div.tooltip-tweet {
 }
 
 .svgbar3 {
-    fill: pink;
+    fill: mediumorchid;
     stroke-width: 3;
-    stroke: palevioletred;
+    stroke: orchid;
     width: 25px;
     padding-left: 30px
 }
@@ -95,7 +95,7 @@ div.tooltip-tweet {
 .bartext1,
 .bartext2,
 .bartext3 {
-    fill: white;
+    fill: black;
     text-anchor: middle;
     text-align: center;
     font-size: 18px;

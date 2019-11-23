@@ -1,6 +1,9 @@
 function on_click_algo(algo_name) {
     var startTime = new Date().getTime();
-    d3.json("../mainData.json").then(function(response) {
+
+    var filename = "../jsons/" + algo_name + ".json";
+
+    d3.json(filename).then(function(response) {
 
         var data = response[0];
 
@@ -63,7 +66,7 @@ function on_click_algo(algo_name) {
                 } else {
                     disp_data = "Name: " + d.data.uName + "<br/>" +
                         "Followers: " + d.data.followers + "<br/>" +
-                        "Total Times Retweetedme: " + d.data.totalTimesRetweeted + "<br/>" +
+                        "Total Times Retweeted: " + d.data.totalTimesRetweeted + "<br/>" +
                         "Total Tweets: " + d.data.totalTweets + "<br/>"
                 }
                 tooltip_div.html(JSON.stringify(disp_data))
@@ -137,13 +140,15 @@ function on_click_algo(algo_name) {
 
 function on_click_bar(algo_name) {
 
-    d3.json("../mainData.json").then(function(data) {
+    var startTime = new Date().getTime();
 
+    var filename = "../jsons/" + algo_name + ".json";
+
+
+    d3.json("../mainData.json").then(function(data) {
         console.log(data);
 
         var bar_data = []
-
-
 
         data.forEach(d => {
 
@@ -176,11 +181,13 @@ function on_click_bar(algo_name) {
         var svg_height = 800 - margin_bottom - margin_top;
         var svg_bar_width = 20;
 
-        var legend_names = ['Similar Values', 'Different Values without any NA', 'Different values with NA'];
+        console.log(Object.keys(bar_data[0]));
+
+        var legend_names = ["Similar Values", "Different Values without any NA", "Different values with NA"];
 
         var legend_color_map = {
             'Similar Values': 'lightsalmon',
-            'Different Values without any NA': 'pink',
+            "Different Values without any NA": 'pink',
             'Different values with NA': 'mediumorchid'
         };
 
@@ -199,13 +206,13 @@ function on_click_bar(algo_name) {
             .padding(0.2);
 
         const svg_bar_x_scale_1 = d3.scaleBand()
-            .domain(['Similar Values', 'Different Values without any NA', 'Different values with NA'])
+            .domain(['Similar Values', "Different Values without any NA", 'Different values with NA'])
             .range([0, svg_bar_x_scale.bandwidth()])
             .padding(0.1);
 
         const svg_bar_y_scale = d3.scaleLinear()
             .range([svg_height, 0])
-            .domain([0, 100]);
+            .domain([0, 15000]);
 
         svg_bar_chart.append('g')
             .attr('transform', "translate(0," + svg_height + ")")
@@ -236,8 +243,8 @@ function on_click_bar(algo_name) {
             .attr("class", "legend")
             .attr("transform", function(d, i) {
                 var h = 50;
-                var x = svg_width / 16;
-                var y = (i * h) - svg_height / 3;
+                var x = svg_width / 3;
+                var y = (i * h) - svg_height / 4;
                 return "translate(" +
                     x + "," + y + ")";
             });
@@ -287,9 +294,9 @@ function on_click_bar(algo_name) {
             .enter()
             .append('rect')
             .attr('class', 'bar svgbar2')
-            .attr('x', (d) => svg_bar_x_scale_1('Different values without any NA'))
-            .attr('y', (d) => svg_bar_y_scale(d['Different values without any NA']))
-            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without any NA']))
+            .attr('x', (d) => svg_bar_x_scale_1("Different Values without any NA"))
+            .attr('y', (d) => svg_bar_y_scale(d["Different Values without any NA"]))
+            .attr('height', (d) => svg_height - svg_bar_y_scale(d["Different Values without any NA"]))
             .attr('width', svg_bar_x_scale_1.bandwidth());
 
         svg_bars.selectAll(".bar.svgbar3")
@@ -320,13 +327,13 @@ function on_click_bar(algo_name) {
             .data(bar_data => [bar_data])
             .enter()
             .append('text')
-            .attr('x', (d) => svg_bar_x_scale_1('Different values without any NA') + svg_bar_x_scale_1.bandwidth() / 4)
-            .attr('y', (d) => svg_bar_y_scale(d['Different values without any NA']))
-            .attr('height', (d) => svg_height - svg_bar_y_scale(d['Different values without any NA']))
+            .attr('x', (d) => svg_bar_x_scale_1("Different Values without any NA") + svg_bar_x_scale_1.bandwidth() / 4)
+            .attr('y', (d) => svg_bar_y_scale(d["Different Values without any NA"]))
+            .attr('height', (d) => svg_height - svg_bar_y_scale(d["Different Values without any NA"]))
             .attr('width', svg_bar_x_scale_1.bandwidth())
             .attr('class', 'bartext2')
             .text(function(d) {
-                return d['Different values without NA'];
+                return d["Different Values without any NA"];
             });
 
         svg_bars.selectAll('.bar.bartext3')
