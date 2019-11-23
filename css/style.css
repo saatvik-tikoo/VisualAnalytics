@@ -29,3 +29,87 @@ div.tooltip-tweet {
     font-size: 1.3rem;
     opacity: 0;
 }
+
+#svg01 {
+    fill: aliceblue;
+}
+
+#svg01 path {
+    stroke: black;
+}
+
+#svg01.tick line {
+    stroke: black;
+}
+
+#svg01.tick {
+    stroke: black;
+}
+
+#svg01.tick text {
+    stroke: none;
+}
+
+.bar {
+    margin-bottom: 2px;
+    text-align: right;
+    font-size: 16px;
+    color: white;
+    background-color: blue;
+    border: 5px solid green;
+}
+
+#svg_bar {
+    width: 100%;
+    height: 100%;
+}
+
+.svgbar1 {
+    fill: lightsalmon;
+    stroke-width: 3;
+    stroke: salmon;
+    width: 25px;
+}
+
+.svgbar2 {
+    fill: pink;
+    stroke-width: 3;
+    stroke: palevioletred;
+    width: 25px;
+    padding-left: 30px
+}
+
+.svgbar3 {
+    fill: pink;
+    stroke-width: 3;
+    stroke: palevioletred;
+    width: 25px;
+    padding-left: 30px
+}
+
+.axis {
+    font: 10px sans-serif;
+    text-decoration-color: black;
+}
+
+.bartext1,
+.bartext2,
+.bartext3 {
+    fill: white;
+    text-anchor: middle;
+    text-align: center;
+    font-size: 18px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.label {
+    fill: white;
+    font-size: 20px;
+    text-anchor: middle;
+}
