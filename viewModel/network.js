@@ -1,13 +1,12 @@
 function on_click_algo(algo_name) {
     var startTime = new Date().getTime();
-
-    var filename = "../jsons/" + algo_name + ".json";
+    document.getElementById('svg_graph').innerHTML = '';
+    document.getElementById('displayTime').innerHTML = '';
+    var filename = "../data/" + algo_name + ".json";
 
     d3.json(filename).then(function(response) {
 
         var data = response[0];
-
-        // console.log(data);
 
         var color = d3.scaleLinear()
             .domain([0, 5])
@@ -27,7 +26,6 @@ function on_click_algo(algo_name) {
 
 
         const root = pack(data);
-        console.log(root);
 
         let focus = root;
         let view;
@@ -52,9 +50,7 @@ function on_click_algo(algo_name) {
             .data(root.descendants().slice(1))
             .join("circle")
             .attr("fill", d => d.children ? color(d.depth) : "white")
-            // .attr("pointer-events", d => !d.children ? "none" : null)
             .on("mouseover", function(d) {
-                // console.log(d.data.name);
                 d3.select(this).attr("stroke", "#000");
                 tooltip_div.transition()
                     .duration(200)
@@ -72,7 +68,6 @@ function on_click_algo(algo_name) {
                 tooltip_div.html(JSON.stringify(disp_data))
                     .style("left", (d3.event.layerX + 10) + "px")
                     .style("top", (d3.event.layerY + 10) + "px");
-                console.log(tooltip_div);
             })
             .on("mouseout", function() {
                 d3.select(this).attr("stroke", null);
@@ -92,9 +87,6 @@ function on_click_algo(algo_name) {
             .style("fill-opacity", d => d.parent === root ? 1 : 0)
             .style("display", d => d.parent === root ? "inline" : "none")
             .text(function(d) {
-                // console.log(d);
-
-                // return d.data.uName;
             });
 
         zoomTo([root.x, root.y, root.r * 2]);
@@ -135,7 +127,17 @@ function on_click_algo(algo_name) {
                 });
         }
     });
-
+    var elementExists = document.getElementsByClassName("circles_g");
+    var myInterval = setInterval(myTimer, 500);
+    
+    function myTimer() {
+        if (elementExists){
+            var endTime = new Date().getTime();
+            document.getElementById('displayTime').innerHTML = 'Total Time to generate: ' + (endTime - startTime) / 1000  + ' seconds'
+            clearInterval(myInterval);
+            document.getElementById('desc').style.visibility = 'visible';
+        }
+    }
 }
 
 function on_click_bar() {
@@ -143,7 +145,7 @@ function on_click_bar() {
     var startTime = new Date().getTime();
 
     function get_filename(algo_name) {
-        return "../jsons/" + algo_name + ".json";
+        return "../data/" + algo_name + ".json";
 
     }
 
@@ -159,23 +161,19 @@ function on_click_bar() {
                 data.push(network[0]);
                 data.push(usc[0]);
 
-                console.log(data);
-
                 var bar_data = []
 
                 data.forEach(d => {
 
                     var algo_details = {}
                     algo_details.name = d.name;
-
-                    // console.log("d:" + d);
+                    
                     d.children.forEach(child_l1 => {
                         var count = 0;
                         child_l1.children.forEach(child_l2 => {
 
                             child_l2.children.forEach(child_l3 => {
                                 count += child_l3.children.length;
-                                // console.log(count);
                             });
                             algo_details[child_l1.name] = count;
                         });
@@ -184,24 +182,19 @@ function on_click_bar() {
                     bar_data.push(algo_details);
                 });
 
-                console.log(bar_data);
-
                 var margin_right = 20;
                 var margin_top = 20;
                 var margin_left = 50;
                 var margin_bottom = 50;
                 var svg_width = 800 - margin_left - margin_right;
-                var svg_height = 800 - margin_bottom - margin_top;
-                var svg_bar_width = 20;
-
-                console.log(Object.keys(bar_data[0]));
+                var svg_height = 500 - margin_bottom - margin_top;
 
                 var legend_names = ["Similar Values", "Different Values without any NA", "Different values with NA"];
 
                 var legend_color_map = {
-                    'Similar Values': '#005000',
-                    "Different Values without any NA": '#000050',
-                    'Different values with NA': '#500000'
+                    'Similar Values': '#2F840F',
+                    "Different Values without any NA": '#FAAD25',
+                    'Different values with NA': '#F4171A'
                 };
 
                 var svg_bar_chart = d3.select("#graph")
@@ -365,5 +358,17 @@ function on_click_bar() {
 
         });
     });
+    
+    var elementExists = document.getElementsByClassName("bar svgbar1");
+    var myInterval = setInterval(myTimer, 500);
+    function myTimer() {
+        if (elementExists){
+            var endTime = new Date().getTime();
+            document.getElementById('displayTime').innerHTML = 'Total Time to generate: ' + (endTime - startTime) / 1000  + ' seconds'
+            clearInterval(myInterval);
+            document.getElementById('descBar').style.visibility = 'visible';
+            
+        }
+    }
 
 }

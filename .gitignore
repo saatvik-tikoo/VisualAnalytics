@@ -1,4 +1,5 @@
-node_modules/*
-Database/gamergate.json
-Database/mydb.sqlite3
+node_modules
+createDB/gamergate.json
+createDB/.ipynb_checkpoints
 .idea
+data/*

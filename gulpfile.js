@@ -1,10 +1,8 @@
 var gulp = require('gulp');
 var fs = require('fs');
 
-//  Make a rest call to get all the data
-//  Write two for loops and generate the whole structure and save it in a list and push that list to file
 gulp.task('createDataFile', function () {
-    fs.readFile('./cleanData.json', function (err, data) {
+    fs.readFile('./data/cleanData.json', function (err, data) {
         var fileNames = ['stanford', 'usc', 'network'];
         for (var idx = 0; idx < fileNames.length; idx++) {
             if (err) throw err;
@@ -146,8 +144,9 @@ gulp.task('createDataFile', function () {
                 }
             }
 
-            fs.writeFile('./'+ fileNames[idx]+ '.json', JSON.stringify(result), (err) => {
+            fs.writeFile('./data/'+ fileNames[idx]+ '.json', JSON.stringify(result), (err) => {
                 if (err) throw err;
+                console.log("Files generated!!!")
             });
         }
     });
